@@ -1,0 +1,14 @@
+<script>
+    var rapyd_data = '<?php echo $this->getAction()?>';
+    rapyd_data = JSON.parse(rapyd_data);
+
+</script>
+
+<script src="<?php if (!empty($block)) {
+    echo $block->getViewFileUrl('Rapyd_Rapyd::js/success.js');
+} ?>"></script>
+
+<h1 id="title"></h1>
+<h2 id="message"></h2>
+<h3 id="order_id"></h3>
+<button id="shopping" class="primary">Continue Shopping</button>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<payment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
+    <methods>
+        <method name="rapyd_cash">
+            <allow_multiple_address>0</allow_multiple_address>
+        </method>
+        <method name="rapyd_ewallet">
+            <allow_multiple_address>0</allow_multiple_address>
+        </method>
+        <method name="rapyd_card">
+            <allow_multiple_address>0</allow_multiple_address>
+        </method>
+        <method name="rapyd_bank">
+            <allow_multiple_address>0</allow_multiple_address>
+        </method>
+    </methods>
+</payment>
