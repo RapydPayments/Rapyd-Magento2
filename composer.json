@@ -1,19 +1,21 @@
 {
-    "name": "Rapyd/Rapyd",
-    "description": "Rapyd Payments solution",
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "license": [
-        "Apache-2.0"
+  "name": "rapyd/rapyd",
+  "description": "Rapyd Payments solution",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "Apache-2.0"
+  ],
+  "require": {
+    "php": "~7.2.0||~7.3.0",
+    "magento/framework": "~100.0.4"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "require": {
-        "php": "~7.2.0||~7.3.0",
-        "magento/framework": "~100.0.4"
-    },
-    "autoload": {
-        "files": [ "registration.php" ],
-        "psr-4": {
-            "Rapyd\\Rapyd\\": ""
-        }
+    "psr-4": {
+      "Rapyd\\Rapyd\\": ""
     }
+  }
 }
