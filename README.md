@@ -1,5 +1,7 @@
 # Rapyd Magento2 Plugin 
 
+<!--- Helper text. Technical content needs to be added below ## --->
+
 ## Overview
 integrate Rapyd Payments plugin for Magento and start accepting payment methods worldwide
 
@@ -20,7 +22,6 @@ What Rapyd API does Magento support - need link to that in Docs/Refs
 
 ## License
 What type?
-Giliad 
 
 ## Technical support
 Link to Zendesk support form (support.rapyd.net) 
