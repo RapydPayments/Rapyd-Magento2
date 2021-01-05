@@ -1,4 +1,4 @@
-# Rapyd-Magento2 Plugin 
+# Rapyd Magento2 Plugin 
 
 ## Overview
 integrate Rapyd Payments plugin for Magento and start accepting payment methods worldwide
