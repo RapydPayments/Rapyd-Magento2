@@ -15,7 +15,7 @@ define(
 		console.log(Component);
         return Component.extend({
             defaults: {
-                template: 'Rapyd_Rapyd/payment/rapydpaymentmethod-bank'
+                template: 'rapydpayments_rapydmagento2/payment/rapydpaymentmethod-bank'
             },
 			 afterPlaceOrder: function () {
             window.location.replace(url.build('rapyd/redirect/'));

@@ -1,5 +1,5 @@
 <?php
-namespace Rapyd\Rapyd\Model\Api;
+namespace rapydpayments\rapydmagento2\Model\Api;
 
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Sales\Model\Order\Payment\Transaction\Builder as TransactionBuilder;

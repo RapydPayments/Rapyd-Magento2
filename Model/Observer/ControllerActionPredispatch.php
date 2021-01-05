@@ -1,5 +1,5 @@
 <?php
-namespace Rapyd\Rapyd\Model\Observer;
+namespace rapydpayments\rapydmagento2\Model\Observer;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\Event\ObserverInterface;

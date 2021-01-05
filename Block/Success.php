@@ -1,5 +1,5 @@
 <?php
-namespace Rapyd\Rapyd\Block;
+namespace rapydpayments\rapydmagento2\Block;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\View\Element\Template\Context;

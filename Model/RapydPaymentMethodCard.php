@@ -1,6 +1,6 @@
 <?php
 
-namespace Rapyd\Rapyd\Model;
+namespace rapydpayments\rapydmagento2\Model;
 
 include_once __DIR__ . DIRECTORY_SEPARATOR . "RapydPaymentMethodAbstract.php";
 

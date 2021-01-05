@@ -1,5 +1,5 @@
 <?php
-namespace Rapyd\Rapyd\Block;
+namespace rapydpayments\rapydmagento2\Block;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\View\Element\Template\Context;
@@ -119,7 +119,7 @@ class Main extends \Magento\Framework\View\Element\Template
                     $rapyd_data['success_url'] = $base_url . 'rapyd/success/';
                 }
                 if (strpos($base_url, '127.0.0.1') !== false) {
-                    $this->toolkit_url = $this->getViewFileUrl('Rapyd_Rapyd::js/toolkit.js');
+                    $this->toolkit_url = $this->getViewFileUrl('rapydpayments_rapydmagento2::js/toolkit.js');
                 } else {
                     $this->toolkit_url = $api->rapyd_get_toolkit_url();
                 }

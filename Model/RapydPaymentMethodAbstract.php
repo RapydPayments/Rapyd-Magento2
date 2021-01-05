@@ -1,6 +1,6 @@
 <?php
 
-namespace Rapyd\Rapyd\Model;
+namespace rapydpayments\rapydmagento2\Model;
 
 $ds = DIRECTORY_SEPARATOR;
 include_once __DIR__ . "$ds..$ds/lib/Rapyd.php";

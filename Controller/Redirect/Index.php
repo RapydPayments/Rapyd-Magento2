@@ -1,5 +1,5 @@
 <?php
-namespace Rapyd\Rapyd\Controller\Redirect;
+namespace rapydpayments\rapydmagento2\Controller\Redirect;
 
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
