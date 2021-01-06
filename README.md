@@ -33,4 +33,4 @@ Apache-2.0
 
 ## Technical support
 
-Zendesk support [packagist](https://support.rapyd.net/)
+Zendesk [support](https://support.rapyd.net/)
