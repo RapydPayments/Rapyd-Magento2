@@ -17,8 +17,6 @@ Must use composer - [packagist](https://packagist.org/packages/rapydpayments/rap
 
 ## Configuration
 
-Make sure you have a Client Portal Account, log in, do-some-work in CP, when will this be in CP? Next steps...
-
 ## Documentation
 
 Link to docs/refs if long - could also put in readme if simple enough
