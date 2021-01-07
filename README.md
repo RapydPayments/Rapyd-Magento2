@@ -1,6 +1,6 @@
 # Rapyd Magento2 Plugin
 
-<!--- Helper text. Technical content needs to be added below ## --->
+https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento
 
 ## Overview
 
@@ -19,11 +19,11 @@ Must use composer - [packagist](https://packagist.org/packages/rapydpayments/rap
 
 ## Documentation
 
-Link to docs/refs if long - could also put in readme if simple enough
+https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento
 
 ## API
 
-What Rapyd API does Magento support - need link to that in Docs/Refs
+What Rapyd API does Magento support - [Documentation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
 
 ## License
 
