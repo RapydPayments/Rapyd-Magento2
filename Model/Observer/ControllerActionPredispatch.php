@@ -29,8 +29,6 @@ class ControllerActionPredispatch implements ObserverInterface
                                 ->get('Magento\Framework\UrlInterface');
                     $url = $this->urlBuilder->getUrl("rapyd/redirect");
                     header("Location:$url");
-
-                    exit;
                 }
             }
         }
