@@ -19,7 +19,6 @@ See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento) 
 
 See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
 
-What Rapyd API does Magento support - [Documentation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
 
 ## License
 
