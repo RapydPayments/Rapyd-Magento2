@@ -11,7 +11,7 @@ See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#p
 
 ## Installation
 
-For detailed information read our Rapyd documentation [installation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#installation-via-composer) section to learn more.
+For detailed information read our Rapyd documentation [installation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#installation-via-composer) section to learn more about installing via Composer.
 
 ## Configuration
 
