@@ -1,6 +1,6 @@
 # Rapyd Magento2 Plugin
 
-Integrate Rapyd Payments plugin for Magento and start accepting payment methods worldwide.
+Instantly connect your Magento ecommerce site to card acceptance and hundreds of local payment methods across the globe.
 
 ## Requirements
 
