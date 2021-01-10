@@ -4,6 +4,7 @@ Instantly connect your Magento ecommerce site to card acceptance and hundreds of
 
 ## Requirements
 
+- Rapyd Client Portal Account
 - Composer
 - PHP >=5.4.0
 
