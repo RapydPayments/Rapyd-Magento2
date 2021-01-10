@@ -22,7 +22,7 @@ See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
 
 ## License
 
-Apache-2.0
+Apache-2.0 see LICENSE file for more
 
 ## Technical support
 
