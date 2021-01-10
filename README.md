@@ -14,7 +14,7 @@ See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#p
 
 For detailed information read our Rapyd documentation [installation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#installation-via-composer) section to learn more about installing via Composer.
 
-## Configuration for testing
+## Configuration for Testing
 
 See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#step-4-configure-the-plugin-for-testing) for configuration details
 
@@ -27,6 +27,6 @@ See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
 
 Apache-2.0 see LICENSE file for more
 
-## Technical support
+## Technical Support
 
 For technical support please contact [Rapyd Support](https://support.rapyd.net/)
