@@ -16,16 +16,16 @@ For detailed information read our Rapyd documentation [installation](https://doc
 
 ## Configuration for Testing
 
-See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#step-4-configure-the-plugin-for-testing) for configuration details
+See Rapyd Docs for [configuration](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#step-4-configure-the-plugin-for-testing) details
 
 ## Documentation & API Support
 
-See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
+See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento) for details. 
 
 
 ## License
 
-Apache-2.0 see LICENSE file for more
+Apache-2.0 see LICENSE
 
 ## Technical Support
 
