@@ -7,7 +7,7 @@ Integrate Rapyd Payments plugin for Magento and start accepting payment methods 
 - Composer
 - PHP >=5.4.0
 
-See [docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#prerequisites) for more information.
+See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#prerequisites) for more information.
 
 ## Installation
 
