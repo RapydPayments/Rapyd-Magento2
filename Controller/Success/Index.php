@@ -1,5 +1,5 @@
 <?php
-namespace rapydpayments\rapydmagento2\Controller\Success;
+namespace rapyd\rapydmagento2\Controller\Success;
 
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;

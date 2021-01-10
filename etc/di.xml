@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <preference for="rapydpayments\rapydmagento2\Api\WebhookInterface" type="rapydpayments\rapydmagento2\Model\Api\Webhook"/>
+    <preference for="rapyd\rapydmagento2\Api\WebhookInterface" type="rapyd\rapydmagento2\Model\Api\Webhook"/>
 </config>

@@ -2,7 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block cacheable="false"  name='rapyd_success' class="rapydpayments\rapydmagento2\Block\Success" template="rapydpayments_rapydmagento2::success.phtml"/>
+            <block cacheable="false"  name='rapyd_success' class="rapyd\rapydmagento2\Block\Success" template="rapyd_rapydmagento2::success.phtml"/>
         </referenceContainer>
     </body>
 </page>

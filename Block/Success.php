@@ -1,12 +1,9 @@
 <?php
-namespace rapydpayments\rapydmagento2\Block;
+namespace rapyd\rapydmagento2\Block;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Sales\Model\OrderFactory;
-
-$ds = DIRECTORY_SEPARATOR;
-include_once __DIR__ . "$ds..$ds/lib/consts.php";
 
 class Success extends \Magento\Framework\View\Element\Template
 {
@@ -41,17 +38,17 @@ class Success extends \Magento\Framework\View\Element\Template
             $status = $order->getStatus();
             $base_url = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
             $rapyd_data = [
-                'title'=> RAPYD_THANKYOU_PAGE_ON_HOLD_TITLE,
-                'message'=> RAPYD_THANKYOU_PAGE_ON_HOLD,
+                'title'=> \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_THANKYOU_PAGE_ON_HOLD_TITLE,
+                'message'=> \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_THANKYOU_PAGE_ON_HOLD,
                 'shopping_url'=>$base_url,
                 'order_id'=>$orderId
             ];
             if ('processing' == $status) {
-                $rapyd_data['title'] = RAPYD_THANKYOU_PAGE_SUCCESS_TITLE;
-                $rapyd_data['message'] = RAPYD_THANKYOU_PAGE_SUCCESS;
+                $rapyd_data['title'] = \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_THANKYOU_PAGE_SUCCESS_TITLE;
+                $rapyd_data['message'] = \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_THANKYOU_PAGE_SUCCESS;
             } elseif ('canceled' == $status) {
-                $rapyd_data['title'] = RAPYD_THANKYOU_PAGE_ON_CANCEL_TITLE;
-                $rapyd_data['message'] = RAPYD_THANKYOU_PAGE_ON_CANCEL;
+                $rapyd_data['title'] = \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_THANKYOU_PAGE_ON_CANCEL_TITLE;
+                $rapyd_data['message'] = \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_THANKYOU_PAGE_ON_CANCEL;
             }
             $this->setAction(json_encode($rapyd_data, JSON_UNESCAPED_SLASHES));
         } catch (\Exception $e) {

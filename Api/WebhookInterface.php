@@ -1,5 +1,5 @@
 <?php
-namespace rapydpayments\rapydmagento2\Api;
+namespace rapyd\rapydmagento2\Api;
 
 interface WebhookInterface
 {

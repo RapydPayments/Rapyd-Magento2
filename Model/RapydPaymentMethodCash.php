@@ -1,8 +1,6 @@
 <?php
 
-namespace rapydpayments\rapydmagento2\Model;
-
-include_once __DIR__ . DIRECTORY_SEPARATOR . "RapydPaymentMethodAbstract.php";
+namespace rapyd\rapydmagento2\Model;
 
 class RapydPaymentMethodCash extends RapydPaymentMethodAbstract
 {
