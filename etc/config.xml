@@ -4,25 +4,25 @@
         <payment>
             <rapyd_bank>
                 <active>1</active>
-                <model>rapyd\rapydmagento2\Model\RapydPaymentMethodBank</model>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodBank</model>
                 <order_status>pending</order_status>
                 <title>Bank</title>
             </rapyd_bank>
             <rapyd_card>
                 <active>1</active>
-                <model>rapyd\rapydmagento2\Model\RapydPaymentMethodCard</model>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodCard</model>
                 <order_status>pending</order_status>
                 <title>Card</title>
             </rapyd_card>
             <rapyd_cash>
                 <active>1</active>
-                <model>rapyd\rapydmagento2\Model\RapydPaymentMethodCash</model>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodCash</model>
                 <order_status>pending</order_status>
                 <title>Cash</title>
             </rapyd_cash>
             <rapyd_ewallet>
                 <active>1</active>
-                <model>rapyd\rapydmagento2\Model\RapydPaymentMethodEwallet</model>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodEwallet</model>
                 <order_status>pending</order_status>
                 <title>eWallet</title>
             </rapyd_ewallet>

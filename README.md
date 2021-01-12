@@ -1,34 +1,32 @@
 # Rapyd Magento2 Plugin
 
-https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento
-
-## Overview
-
-integrate Rapyd Payments plugin for Magento and start accepting payment methods worldwide
+Instantly connect your Magento ecommerce site to card acceptance and hundreds of local payment methods across the globe.
 
 ## Requirements
 
+- Rapyd Client Portal Account
 - Composer
 - PHP >=5.4.0
 
+See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#prerequisites) for more information.
+
 ## Installation
 
-Must use composer - [packagist](https://packagist.org/packages/rapyd/rapydmagento2)
+For detailed information read our Rapyd documentation [installation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#installation-via-composer) section to learn more about installing via Composer.
 
-## Configuration
+## Configuration for Testing
 
-## Documentation
+See Rapyd Docs for [configuration](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento#step-4-configure-the-plugin-for-testing) details
 
-https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento
+## Documentation & API Support
 
-## API
+See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento) for details. 
 
-What Rapyd API does Magento support - [Documentation](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento)
 
 ## License
 
-Apache-2.0
+Apache-2.0 see LICENSE
 
-## Technical support
+## Technical Support
 
-Zendesk [support](https://support.rapyd.net/)
+For technical support please contact [Rapyd Support](https://support.rapyd.net/)

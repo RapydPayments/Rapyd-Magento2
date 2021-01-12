@@ -1,5 +1,5 @@
 <?php
-namespace rapyd\rapydmagento2\Model\Api;
+namespace Rapyd\Rapydmagento2\Model\Api;
 
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Sales\Model\Order\Payment\Transaction\Builder as TransactionBuilder;
@@ -114,7 +114,7 @@ class Webhook
             $test_access_key = $this->config->getValue("payment/rapyd/test_access_key", $storeScope);
             $test_secret_key = $this->config->getValue("payment/rapyd/test_secret_key", $storeScope);
 
-            $api = new \rapyd\rapydmagento2\lib\RapydRequest($access_key, $secret_key, $testmode, $test_access_key, $test_secret_key);
+            $api = new \Rapyd\Rapydmagento2\lib\RapydRequest($access_key, $secret_key, $testmode, $test_access_key, $test_secret_key);
             return $api;
         } catch (\Exception $e) {
             //handle exception

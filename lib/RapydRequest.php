@@ -1,6 +1,6 @@
 <?php
 
-namespace rapyd\rapydmagento2\lib;
+namespace Rapyd\Rapydmagento2\lib;
 
 use DateTime;
 
@@ -23,7 +23,7 @@ class RapydRequest
 
     public function generateRapydToken($body)
     {
-        $response = $this->make_request_to_rapyd("post", \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_REDIRECT_PATH, $body);
+        $response = $this->make_request_to_rapyd("post", \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_REDIRECT_PATH, $body);
         return $response;
     }
 
@@ -112,16 +112,16 @@ class RapydRequest
     public function rapyd_get_api_url()
     {
         if ('1' == $this->test_mode || 'yes' == $this->test_mode) {
-            return \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_PLUGIN_URL_TEST;
+            return \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_PLUGIN_URL_TEST;
         }
-        return \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_PLUGIN_URL_PROD;
+        return \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_PLUGIN_URL_PROD;
     }
 
     public function rapyd_get_toolkit_url()
     {
         if ('1' == $this->test_mode || 'yes' == $this->test_mode) {
-            return \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_TOOLKIT_JS_URL_TEST;
+            return \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_TOOLKIT_JS_URL_TEST;
         }
-        return \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_TOOLKIT_JS_URL_PROD;
+        return \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_TOOLKIT_JS_URL_PROD;
     }
 }

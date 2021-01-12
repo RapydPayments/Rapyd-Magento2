@@ -1,5 +1,5 @@
 <?php
-namespace rapyd\rapydmagento2\Api;
+namespace Rapyd\Rapydmagento2\Api;
 
 interface WebhookInterface
 {

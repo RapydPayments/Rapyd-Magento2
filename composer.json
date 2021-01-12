@@ -14,7 +14,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "rapyd\\rapydmagento2\\": ""
+            "Rapyd\\Rapydmagento2\\": ""
         }
     }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace rapyd\rapydmagento2\Block;
+namespace Rapyd\Rapydmagento2\Block;
 
 use Magento\Checkout\Model\Session;
 use Magento\Framework\View\Element\Template\Context;
@@ -95,7 +95,7 @@ class Main extends \Magento\Framework\View\Element\Template
                 $test_access_key = $this->config->getValue("payment/rapyd/test_access_key", $storeScope);
                 $test_secret_key = $this->config->getValue("payment/rapyd/test_secret_key", $storeScope);
 
-                $api = new \rapyd\rapydmagento2\lib\RapydRequest($access_key, $secret_key, $testmode, $test_access_key, $test_secret_key);
+                $api = new \Rapyd\Rapydmagento2\lib\RapydRequest($access_key, $secret_key, $testmode, $test_access_key, $test_secret_key);
                 $response = $api->generateRapydToken($body);
 
                 $rapyd_data = [
@@ -104,7 +104,7 @@ class Main extends \Magento\Framework\View\Element\Template
                 'message'=>''
             ];
                 if (empty($response)) {
-                    $rapyd_data['message'] =  \rapyd\rapydmagento2\lib\RapydConsts::RAPYD_ERROR_LOADING_TOOLKIT;
+                    $rapyd_data['message'] =  \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_ERROR_LOADING_TOOLKIT;
                 } elseif (!empty($response) && empty($response['token'])) {
                     $rapyd_data['message'] = $response;
                 } else {
@@ -113,7 +113,7 @@ class Main extends \Magento\Framework\View\Element\Template
                     $rapyd_data['success_url'] = $base_url . 'rapyd/success/';
                 }
                 if (strpos($base_url, '127.0.0.1') !== false) {
-                    $this->toolkit_url = $this->getViewFileUrl('rapyd_rapydmagento2::js/toolkit.js');
+                    $this->toolkit_url = $this->getViewFileUrl('Rapyd_Rapydmagento2::js/toolkit.js');
                 } else {
                     $this->toolkit_url = $api->rapyd_get_toolkit_url();
                 }

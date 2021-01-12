@@ -17,7 +17,7 @@
                                                             <!-- merge payment method renders here -->
                                                             <item name="children" xsi:type="array">
                                                                 <item name="rapyd-payments" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">rapyd_rapydmagento2/js/view/payment/rapydpaymentmethod</item>
+                                                                    <item name="component" xsi:type="string">Rapyd_Rapydmagento2/js/view/payment/rapydpaymentmethod</item>
                                                                     <item name="methods" xsi:type="array">
                                                                         <item name="rapyd_bank" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>

@@ -1,6 +1,6 @@
 <?php
 
-namespace rapyd\rapydmagento2\Model;
+namespace Rapyd\Rapydmagento2\Model;
 
 class RapydPaymentMethodEwallet extends RapydPaymentMethodAbstract
 {

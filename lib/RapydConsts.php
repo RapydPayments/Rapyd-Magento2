@@ -1,6 +1,6 @@
 <?php
 
-namespace rapyd\rapydmagento2\lib;
+namespace Rapyd\Rapydmagento2\lib;
 
 class RapydConsts
 {

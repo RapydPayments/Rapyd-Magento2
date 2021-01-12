@@ -17,19 +17,19 @@ define(
         rendererList.push(
             {
                 type: 'rapyd_bank',
-                component: 'rapyd_rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-bank'
+                component: 'Rapyd_Rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-bank'
             },
             {
                 type: 'rapyd_cash',
-                component: 'rapyd_rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-cash'
+                component: 'Rapyd_Rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-cash'
             },
             {
                 type: 'rapyd_card',
-                component: 'rapyd_rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-card'
+                component: 'Rapyd_Rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-card'
             },
             {
                 type: 'rapyd_ewallet',
-                component: 'rapyd_rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-ewallet'
+                component: 'Rapyd_Rapydmagento2/js/view/payment/method-renderer/rapydpaymentmethod-ewallet'
             }
         );
         /** Add view logic here if needed */
