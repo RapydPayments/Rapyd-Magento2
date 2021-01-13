@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <rapyd_bank>
+                <active>1</active>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodBank</model>
+                <order_status>pending</order_status>
+                <title>Bank</title>
+            </rapyd_bank>
+            <rapyd_card>
+                <active>1</active>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodCard</model>
+                <order_status>pending</order_status>
+                <title>Card</title>
+            </rapyd_card>
+            <rapyd_cash>
+                <active>1</active>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodCash</model>
+                <order_status>pending</order_status>
+                <title>Cash</title>
+            </rapyd_cash>
+            <rapyd_ewallet>
+                <active>1</active>
+                <model>Rapyd\Rapydmagento2\Model\RapydPaymentMethodEwallet</model>
+                <order_status>pending</order_status>
+                <title>eWallet</title>
+            </rapyd_ewallet>
+        </payment>
+    </default>
+</config>
+
