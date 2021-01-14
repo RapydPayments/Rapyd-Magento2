@@ -1,0 +1,20 @@
+{
+    "name": "rapyd/rapydmagento2",
+    "description": "Rapyd Payments Plugin for Magento",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "Apache-2.0"
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Rapyd\\Rapydmagento2\\": ""
+        }
+    }
+}
