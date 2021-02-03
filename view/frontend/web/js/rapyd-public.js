@@ -162,6 +162,9 @@ require(['jquery','domReady!'], function ($) {
     }
 
     function createInstructions(instructions) {
+        if(!instructions[0] || !instructions[0]["steps"] || instructions[0]["steps"].length==0){
+            return;
+        }
         createHeadlineForInstructions();
         var ul = document.createElement('ul');
         ul.style.marginLeft = "unset";

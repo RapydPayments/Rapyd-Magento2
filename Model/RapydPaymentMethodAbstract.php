@@ -9,7 +9,6 @@ abstract class RapydPaymentMethodAbstract extends \Magento\Payment\Model\Method\
     protected $_canOrder = true;
     protected $_isGateway = true;
     protected $_canUseInternal = false;
-    protected $categories;
 
     abstract public function getCategory();
 
@@ -23,14 +22,15 @@ abstract class RapydPaymentMethodAbstract extends \Magento\Payment\Model\Method\
     {
         try {
             $api = $this->getRapydObject();
-            if (empty($this->categories)) {
-                $this->categories = $api->make_request_to_rapyd('get', \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_CATEGORIES_PATH);
+            $instance = \Rapyd\Rapydmagento2\lib\RapydCategories::getInstance();
+            if (empty($instance->getCategories())) {
+                $instance->setCategories($api->make_request_to_rapyd('get', \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_CATEGORIES_PATH));
             }
 
-            if (!($this->categories) || (!empty($this->categories['status']) &&  'ERROR' == $this->categories['status']['status'])) {
+            if (!($instance->getCategories()) || (!empty($instance->getCategories()['status']) &&  'ERROR' == $instance->getCategories()['status']['status'])) {
                 return false;
             }
-            foreach ($this->categories as $value) {
+            foreach ($instance->getCategories() as $value) {
                 if ($value == $this->getCategory()) {
                     return true;
                 }

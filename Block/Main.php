@@ -18,6 +18,7 @@ class Main extends \Magento\Framework\View\Element\Template
     protected $transactionBuilder;
     protected $customerSession;
     protected $toolkit_url;
+    protected $_productRepositoryFactory;
 
     public function __construct(
         Context $context,
@@ -25,7 +26,8 @@ class Main extends \Magento\Framework\View\Element\Template
         OrderFactory $orderFactory,
         \Magento\Customer\Model\Session $customerSession,
         TransactionBuilder $tb,
-        \Magento\Framework\Message\ManagerInterface $messageManager
+        \Magento\Framework\Message\ManagerInterface $messageManager,
+        \Magento\Catalog\Api\ProductRepositoryInterfaceFactory $productRepositoryFactory
     ) {
         $this->toolkit_url = '';
         $this->checkoutSession = $checkoutSession;
@@ -34,6 +36,7 @@ class Main extends \Magento\Framework\View\Element\Template
         $this->customerSession = $customerSession;
         $this->transactionBuilder = $tb;
         $this->_messageManager = $messageManager;
+        $this->_productRepositoryFactory = $productRepositoryFactory;
 
         $this->urlBuilder = \Magento\Framework\App\ObjectManager::getInstance()
             ->get('Magento\Framework\UrlInterface');
@@ -82,7 +85,8 @@ class Main extends \Magento\Framework\View\Element\Template
                     'country' => $this->encode_string($billing->getCountryId()),
                     'zip' => $this->encode_string($billing->getPostcode())
                 ],
-                'category' => $this->encode_string($order->getPayment()->getMethodInstance()->getCode())
+                'category' => $this->encode_string($order->getPayment()->getMethodInstance()->getCode()),
+                'cart' => $this->encode_string($this->getCartItems($order))
             ];
 
                 $order->save();
@@ -128,6 +132,57 @@ class Main extends \Magento\Framework\View\Element\Template
             //$this->_messageManager->addErrorMessage($e->getMessage());
             $this->_messageManager->addErrorMessage('An error occurred. Please try again.');
         }
+    }
+
+    public function getCartItems($order)
+    {
+        try {
+            $items = $order->getAllVisibleItems();
+            $cart=[];
+            foreach ($items as $item) {
+                $cart[] = $this->buildCartItem($item->getName(), $item->getPriceInclTax(), $item->getData('qty_ordered'), $this->getProductImage($item));//getQtyToShip()
+            }
+            $cart = $this->addShippingItem($order, $cart);
+            return json_encode($cart, JSON_UNESCAPED_SLASHES);
+        } catch (\Exception $e) {
+            return '';
+        }
+    }
+
+    public function addShippingItem($order, $cart)
+    {
+        $shipping_amount=$order->getShippingAmount();
+        if ($shipping_amount>0) {
+            $cart[]=$this->buildCartItem('shipping', $shipping_amount, 1, '');
+        }
+        return $cart;
+    }
+
+    public function getProductImage($item)
+    {
+        try {
+            $product = $this->_productRepositoryFactory->create()
+                ->getById($item->getProductId());
+            $objectManager =\Magento\Framework\App\ObjectManager::getInstance();
+            $helperImport = $objectManager->get('\Magento\Catalog\Helper\Image');
+
+            return $helperImport->init($product, 'product_page_image_small')
+                ->setImageFile($product->getSmallImage()) // image,small_image,thumbnail
+                ->resize(380)
+                ->getUrl();
+        } catch (\Exception $e) {
+            return '';
+        }
+    }
+
+    public function buildCartItem($name, $amount, $quantity, $image)
+    {
+        return [
+            'name' => $name,
+            'amount' => $amount,
+            'quantity' => $quantity,
+            'image' => $image
+        ];
     }
 
     public function getLine2($object)
