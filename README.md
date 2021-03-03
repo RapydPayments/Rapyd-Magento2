@@ -20,7 +20,7 @@ See Rapyd Docs for [configuration](https://docs.rapyd.net/docs/rapyd-payments-pl
 
 ## Documentation & API Support
 
-See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento) for details. 
+See [Rapyd Docs](https://docs.rapyd.net/docs/rapyd-payments-plugin-for-magento) for details
 
 
 ## License
@@ -29,4 +29,4 @@ Apache-2.0 see LICENSE
 
 ## Technical Support
 
-For technical support please contact [Rapyd Support](https://support.rapyd.net/)
+For technical support please contact [Rapyd Support](https://support.rapyd.net/).

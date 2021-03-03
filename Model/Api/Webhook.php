@@ -132,11 +132,6 @@ class Webhook
             );
             $trn = $payment->addTransaction(\Magento\Sales\Model\Order\Payment\Transaction::TYPE_ORDER, null, true);//////TYPE_PAYMENT
             $trn->setIsClosed($isClosed)->save();
-            $payment->addTransactionCommentsToOrder(
-                $trn,
-                $message
-            );
-
             $payment->setParentTransactionId(null);
             $payment->save();
         } catch (\Exception $e) {
@@ -155,10 +150,6 @@ class Webhook
             );
             $trn = $payment->addTransaction(\Magento\Sales\Model\Order\Payment\Transaction::TYPE_REFUND, null, true);//////TYPE_PAYMENT
             $trn->setIsClosed($isClosed)->save();
-            $payment->addTransactionCommentsToOrder(
-                $trn,
-                $message
-            );
             $payment->setAmountRefunded($amount);
 
             $payment->setParentTransactionId(null);
@@ -181,10 +172,6 @@ class Webhook
                 $transaction->setTxnId($transactionId);
                 $payment->setAdditionalInformation(
                     [\Magento\Sales\Model\Order\Payment\Transaction::RAW_DETAILS => [$message]]
-                );
-                $payment->addTransactionCommentsToOrder(
-                    $transaction,
-                    $message
                 );
                 $transaction->setIsClosed(1);
                 $transaction->save();
