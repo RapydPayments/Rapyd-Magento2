@@ -28,7 +28,7 @@ class ControllerActionPredispatch implements ObserverInterface
             $orderId = $this->checkoutSession->getLastOrderId();
             if ($orderId) {
                 $order = $this->orderFactory->create()->load($orderId);
-                if (($order->getPayment()->getMethodInstance()->getCode()== "rapyd" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_bank" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_cash" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_card" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_ewallet") and $order->getState()== Order::STATE_NEW) {
+                if ($order->getPayment()->getMethodInstance()->getCode()== "rapyd" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_bank" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_cash" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_card" || $order->getPayment()->getMethodInstance()->getCode()== "rapyd_ewallet") {
                     $this->urlBuilder = \Magento\Framework\App\ObjectManager::getInstance()
                                 ->get('Magento\Framework\UrlInterface');
                     $url = $this->urlBuilder->getUrl("rapyd/redirect");
