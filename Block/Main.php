@@ -113,8 +113,8 @@ class Main extends \Magento\Framework\View\Element\Template
                     $this->toolkit_url = $api->rapyd_get_toolkit_url();
                 }
                 //set initial state after token created
-                $order->setState(Order::STATE_HOLDED)
-                    ->setStatus($order->getConfig()->getStateDefaultStatus(Order::STATE_HOLDED));
+                $order->setState(Order::STATE_PENDING_PAYMENT)
+                    ->setStatus($order->getConfig()->getStateDefaultStatus(Order::STATE_PENDING_PAYMENT));
                 $order->save();
 
                 $this->setAction(json_encode($rapyd_data, JSON_UNESCAPED_SLASHES));

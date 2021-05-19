@@ -111,6 +111,10 @@ class RapydRequest
 
     public function rapyd_get_api_url()
     {
+        $api_url = getenv('RAPYD_PLUGIN_URL_TEST');
+        if (!empty($api_url) && $api_url) {
+            return $api_url;
+        }
         if ('1' == $this->test_mode || 'yes' == $this->test_mode) {
             return \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_PLUGIN_URL_TEST;
         }
@@ -119,6 +123,10 @@ class RapydRequest
 
     public function rapyd_get_toolkit_url()
     {
+        $toolkit_url = getenv('RAPYD_TOOLKIT_JS_URL_TEST');
+        if (!empty($toolkit_url) && $toolkit_url) {
+            return $toolkit_url;
+        }
         if ('1' == $this->test_mode || 'yes' == $this->test_mode) {
             return \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_TOOLKIT_JS_URL_TEST;
         }

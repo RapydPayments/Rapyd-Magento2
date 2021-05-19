@@ -2,6 +2,7 @@
 namespace Rapyd\Rapydmagento2\Model\Api;
 
 use Magento\Framework\View\Element\Template\Context;
+use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Payment\Transaction\Builder as TransactionBuilder;
 use Magento\Sales\Model\OrderFactory;
 
@@ -36,7 +37,7 @@ class Webhook
             $order_note = $body['magento_order_note'];
             $order->setState($orderState)->setStatus($orderState);
             $order->save();
-            if ($orderState=="pending_payment") {//rapyd act
+            if ($orderState==Order::STATE_HOLDED) {//rapyd act
                 $this->addTransactionToOrder($order, $body['payment_token'], 0, $order_note);
             } elseif ($orderState=="processing" || $orderState=="canceled") {
                 if (!$this->updateTransaction($order, $body['payment_token'], $order_note)) {
