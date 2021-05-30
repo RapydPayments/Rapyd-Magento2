@@ -63,7 +63,8 @@ class Webhook
             $refund_token = $body['refund_token'];
             $message = $body['reason'];
             $this->addRefundTransactionToOrder($order, $refund_token, 1, $message, $amount);
-            $order->setTotalRefunded($amount);
+            $amount_refunded = $order->getTotalRefunded();
+            $order->setTotalRefunded($amount_refunded+$amount);
             $order->save();
             return "refund success";
         } catch (\Exception $e) {
