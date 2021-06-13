@@ -31,6 +31,11 @@ class Success extends \Magento\Framework\View\Element\Template
     {
         try {
             $orderId = $this->checkoutSession->getLastOrderId();
+            $queries = [];
+            parse_str($_SERVER['QUERY_STRING'], $queries);
+            if ((getenv('RAPYD_QA_AUTO')==1 || getenv('RAPYD_QA_AUTO')=='1') && !empty($queries['order_id'])) {
+                $orderId = $queries['order_id'];
+            }
             $order = $this->orderFactory->create()->load($orderId);
             if (!$order) {
                 return;//hacking attempt

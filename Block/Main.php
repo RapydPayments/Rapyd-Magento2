@@ -46,6 +46,12 @@ class Main extends \Magento\Framework\View\Element\Template
     {
         try {
             $orderId = $this->checkoutSession->getLastOrderId();
+            $queries = [];
+            parse_str($_SERVER['QUERY_STRING'], $queries);
+            if ((getenv('RAPYD_QA_AUTO')==1 || getenv('RAPYD_QA_AUTO')=='1') && !empty($queries['order_id'])) {
+                $orderId = $queries['order_id'];
+            }
+
             $order = $this->orderFactory->create()->load($orderId);
             if ($order) {
                 $billing = $order->getBillingAddress();
@@ -106,6 +112,9 @@ class Main extends \Magento\Framework\View\Element\Template
                     $rapyd_data['status'] = 'success';
                     $rapyd_data['token'] = $response['token'];
                     $rapyd_data['success_url'] = $base_url . 'rapyd/success/';
+                    if (getenv('RAPYD_QA_AUTO')==1 || getenv('RAPYD_QA_AUTO')=='1') {
+                        $rapyd_data['success_url'] = $base_url . 'rapyd/success?order_id=' . $orderId;
+                    }
                 }
                 if (strpos($base_url, '127.0.0.1') !== false) {
                     $this->toolkit_url = $this->getViewFileUrl('Rapyd_Rapydmagento2::js/toolkit.js');
@@ -125,8 +134,9 @@ class Main extends \Magento\Framework\View\Element\Template
         }
     }
 
-    public function getShippingDetails($shipping){
-        if($shipping){
+    public function getShippingDetails($shipping)
+    {
+        if ($shipping) {
             return [
                 'line1' => $this->encode_string($shipping->getStreet()[0]),
                 'line2' => $this->getLine2($shipping),

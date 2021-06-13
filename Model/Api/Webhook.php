@@ -44,6 +44,12 @@ class Webhook
                     $this->addTransactionToOrder($order, $body['payment_token'], 1, $order_note);
                 }
             }
+            if ($orderState==Order::STATE_PROCESSING) {
+                # send new email
+                $order->setCanSendNewEmailFlag(true);
+                $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                $objectManager->create('Magento\Sales\Model\OrderNotifier')->notify($order);
+            }
             $order->save();
             return "webhook success";
         } catch (\Exception $e) {
