@@ -56,6 +56,7 @@ class Webhook
             //handle exception
         }
     }
+
     public function getRefund($rapyd_data)
     {
         try {
@@ -73,6 +74,21 @@ class Webhook
             $order->setTotalRefunded($amount_refunded+$amount);
             $order->save();
             return "refund success";
+        } catch (\Exception $e) {
+            //handle exception
+        }
+    }
+
+    public function getLastTransaction($rapyd_data)
+    {
+        try {
+            if (!$this->is_signature_valid($rapyd_data)) {
+                return "auth failed";
+            }
+            $body = $rapyd_data['body'];
+            $order_id = $body['order_id'];
+            $order = $this->orderFactory->create()->load($order_id);
+            return $order->getPayment()->getLastTransId();
         } catch (\Exception $e) {
             //handle exception
         }

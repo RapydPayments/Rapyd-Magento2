@@ -18,4 +18,12 @@ interface WebhookInterface
      */
 
     public function getRefund($rapyd_data);
+
+    /**
+     * GET for Post api
+     * @param mixed $rapyd_data
+     * @return string
+     */
+
+    public function getLastTransaction($rapyd_data);
 }

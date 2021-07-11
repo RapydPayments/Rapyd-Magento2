@@ -9,6 +9,7 @@ require(['jquery','domReady!'], function ($) {
     var ERROR_MESSAGE = 'Sorry, something is wrong with your payment. Please go back to recheck payment information and try again.';
 
     if(rapyd_data.status == "success") {
+        showTestmodeMessage(rapyd_data.test_mode);
         loadRapydToolkit(rapyd_data.token);
     }
     else {
@@ -17,6 +18,13 @@ require(['jquery','domReady!'], function ($) {
     function errorFlow(message) {
         hideLoader();
         document.getElementById("rapyd-checkout").innerHTML = message;
+    }
+
+    function showTestmodeMessage(test_mode){
+        if(test_mode=="true" || test_mode==true){
+            let element = document.getElementById("rapyd_test_mode");
+            element.style.display = "block";
+        }
     }
 
     function loadRapydToolkit(token) {

@@ -100,10 +100,11 @@ class Main extends \Magento\Framework\View\Element\Template
                 $response = $api->generateRapydToken($body);
 
                 $rapyd_data = [
-                'status'=>'failed',
-                'token'=>'',
-                'message'=>''
-            ];
+                    'status'=>'failed',
+                    'token'=>'',
+                    'message'=>'',
+                    'test_mode'=>$api->rapyd_get_test_mode()
+                ];
                 if (empty($response)) {
                     $rapyd_data['message'] =  \Rapyd\Rapydmagento2\lib\RapydConsts::RAPYD_ERROR_LOADING_TOOLKIT;
                 } elseif (!empty($response) && empty($response['token'])) {
