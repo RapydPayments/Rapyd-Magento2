@@ -51,7 +51,10 @@ class Main extends \Magento\Framework\View\Element\Template
             if ((getenv('RAPYD_QA_AUTO')==1 || getenv('RAPYD_QA_AUTO')=='1') && !empty($queries['order_id'])) {
                 $orderId = $queries['order_id'];
             }
-
+            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+            $getLocale = $objectManager->get('Magento\Framework\Locale\Resolver');
+            $haystack  = $getLocale->getLocale();
+            $lang = strstr($haystack, '_', true);
             $order = $this->orderFactory->create()->load($orderId);
             if ($order) {
                 $billing = $order->getBillingAddress();
@@ -83,6 +86,7 @@ class Main extends \Magento\Framework\View\Element\Template
                                 'country' => $this->encode_string($billing->getCountryId()),
                                 'zip' => $this->encode_string($billing->getPostcode())
                             ],
+                            'lang' => $this->encode_string($lang),
                             'category' => $this->encode_string($order->getPayment()->getMethodInstance()->getCode()),
                             'cart' => $this->encode_string($this->getCartItems($order))
                         ];
